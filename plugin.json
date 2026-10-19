@@ -1,10 +1,10 @@
 {
-  "id": "ocrScanner",
-  "name": "OCR Scanner",
-  "description": "Extract text from images in clipboard or files using Tesseract OCR",
-  "version": "2.1.1",
-  "license": "GPL-3.0",
-  "author": "Loc Huynh",
+  "id": "ocrTranslate",
+  "name": "OCR Translate",
+  "description": "Read text from the screen, the clipboard or an image with Tesseract, and translate it with a local model on an Ollama-compatible server",
+  "version": "3.0.0",
+  "license": "MIT",
+  "author": "MiX (iNViTiON), based on OCR Scanner by Loc Huynh",
   "icon": "document_scanner",
   "type": "widget",
   "capabilities": [
