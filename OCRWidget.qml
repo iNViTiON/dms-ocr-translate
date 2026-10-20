@@ -356,6 +356,33 @@ PluginComponent {
         onTriggered: pluginRoot.scanFromScreenshot(true)
     }
 
+    // Commands for key bindings, e.g. in niri:
+    //   XF86LinkPhone { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
+    // capture: pick a screen region, scan it and show the window (like the Capture button);
+    // clipboard: scan the clipboard image; toggle: open or close the window.
+    IpcHandler {
+        target: "ocrTranslate"
+
+        function capture(): string {
+            if (pluginRoot.isScanning) return "busy";
+            pluginRoot.closePopout();
+            captureTimer.restart();
+            return "ok";
+        }
+
+        function clipboard(): string {
+            if (pluginRoot.isScanning) return "busy";
+            pluginRoot.triggerPopout();
+            pluginRoot.scanFromClipboard();
+            return "ok";
+        }
+
+        function toggle(): string {
+            pluginRoot.triggerPopout();
+            return "ok";
+        }
+    }
+
     // fromPopout: the button in the window closes it so the region can be picked, and it comes back with the result.
     property bool capturing: false
 

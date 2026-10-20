@@ -93,6 +93,17 @@ environment.systemPackages = with pkgs; [
 
 The plugin keeps its scratch files in `~/.cache/dms-ocr`.
 
+**Keyboard shortcut**: the plugin answers to `dms ipc call ocrTranslate capture` (pick a screen region, scan it and
+open the window), `clipboard` (scan the clipboard image) and `toggle` (open or close the window). Bind one in your
+compositor, for example in niri:
+
+```kdl
+binds {
+    // ThinkPad X1 Carbon: the snip key (Fn+F10) sends XF86LinkPhone
+    XF86LinkPhone hotkey-overlay-title="OCR and translate a screen region" { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
+}
+```
+
 **Updating**: DMS keeps `Translator.js` loaded for the whole session, so after an update run `dms restart`. A plugin
 reload (`dms ipc call plugins reload ocrTranslate`) only picks up changes to the `.qml` files.
 
