@@ -1,5 +1,7 @@
 # OCR Translate
 
+Read text off your screen and translate it, all on your own machine.
+
 A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar plugin that reads text from the screen, the
 clipboard or an image file with [Tesseract](https://github.com/tesseract-ocr/tesseract), and translates it with a
 **local** model on an Ollama-compatible server. It also works as a plain translator: type or paste text, no picture
@@ -7,7 +9,7 @@ needed.
 
 Translation runs on your own machine: [Ollama](https://ollama.com) with
 [TranslateGemma](https://ollama.com/library/translategemma), or
-[local-llm-npu-translator](https://github.com/iNViTiON/local-llm-npu-translator), which serves the same model on an
+[Local LLM NPU Translator](https://github.com/iNViTiON/local-llm-npu-translator), which serves the same model on an
 Intel NPU. The prompt and model handling follow the [Llama Franca](https://github.com/iNViTiON/llama-franca) browser
 extension, so all three share one server and one model.
 
@@ -55,7 +57,7 @@ It started as a fork of the **OCR Scanner** plugin by Loc Huynh
   For SVG files, `rsvg-convert` (librsvg) or ImageMagick.
 - For translation, an Ollama-compatible server on `http://localhost:11434` (changeable in the settings):
   - Ollama: `ollama pull translategemma:4b`. Other models work too, but the prompt is written for TranslateGemma.
-  - or [local-llm-npu-translator](https://github.com/iNViTiON/local-llm-npu-translator) on an Intel NPU. Its model
+  - or [Local LLM NPU Translator](https://github.com/iNViTiON/local-llm-npu-translator) on an Intel NPU. Its model
     names ending in `@NPU`, `@GPU` or `@CPU` pick the device.
 
 ## Install
