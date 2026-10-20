@@ -99,8 +99,8 @@ compositor, for example in niri:
 
 ```kdl
 binds {
-    // ThinkPad X1 Carbon: the snip key (Fn+F10) sends XF86LinkPhone
-    XF86LinkPhone hotkey-overlay-title="OCR and translate a screen region" { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
+    // like Windows' Win+Shift+S snipping shortcut
+    Mod+Shift+S hotkey-overlay-title="OCR and translate a screen region" { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
 }
 ```
 

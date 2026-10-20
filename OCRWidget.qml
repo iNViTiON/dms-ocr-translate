@@ -357,7 +357,7 @@ PluginComponent {
     }
 
     // Commands for key bindings, e.g. in niri:
-    //   XF86LinkPhone { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
+    //   Mod+Shift+S { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
     // capture: pick a screen region, scan it and show the window (like the Capture button);
     // clipboard: scan the clipboard image; toggle: open or close the window.
     IpcHandler {
