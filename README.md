@@ -2,6 +2,8 @@
 
 A DankMaterialShell widget that translates text locally, and can OCR the screen to get it.
 
+![The window: a captured Estonian web banner, its recognised text, and the English translation streamed by TranslateGemma on the NPU](docs/screenshot.png)
+
 A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar plugin that reads text from the screen, the
 clipboard or an image file with [Tesseract](https://github.com/tesseract-ocr/tesseract), and translates it with a
 **local** model on an Ollama-compatible server. It also works as a plain translator: type or paste text, no picture
