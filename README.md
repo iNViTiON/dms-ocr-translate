@@ -1,6 +1,6 @@
-# OCR Translate
+# DMS Translator
 
-Read text off your screen and translate it, all on your own machine.
+A DankMaterialShell widget that translates text locally, and can OCR the screen to get it.
 
 A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar plugin that reads text from the screen, the
 clipboard or an image file with [Tesseract](https://github.com/tesseract-ocr/tesseract), and translates it with a
