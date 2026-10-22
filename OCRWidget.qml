@@ -732,8 +732,23 @@ PluginComponent {
                 ignoreUnknownSignals: true
                 function onShouldBeVisibleChanged() {
                     if (!popout.parentPopout.shouldBeVisible) pluginRoot.resetWindowState();
+                    else focusTimer.restart();
                 }
             }
+
+            // Every time the window opens, the text box takes the keyboard, ready to type or paste. Delayed
+            // because DMS focuses the window itself right after it opens.
+            Timer {
+                id: focusTimer
+                interval: 80
+                repeat: false
+                onTriggered: {
+                    resultArea.forceActiveFocus();
+                    resultArea.cursorPosition = resultArea.length;
+                }
+            }
+
+            Component.onCompleted: focusTimer.restart()
 
             Component.onDestruction: {
                 pluginRoot.resetWindowState();
@@ -1027,15 +1042,18 @@ PluginComponent {
                                 border.width: 1
 
                                 DankFlickable {
+                                    id: resultFlick
                                     anchors.fill: parent
                                     anchors.margins: Theme.spacingM
                                     contentWidth: width - (Theme.spacingM * 2)
-                                    contentHeight: resultArea.implicitHeight
+                                    contentHeight: resultArea.height
                                     clip: true
 
                                     TextEdit {
                                         id: resultArea
                                         width: parent.width
+                                        // At least as tall as the box, so a click anywhere in it puts the cursor here.
+                                        height: Math.max(implicitHeight, resultFlick.height)
                                         text: pluginRoot.resultText
                                         wrapMode: TextEdit.Wrap
                                         font.pixelSize: Theme.fontSizeMedium

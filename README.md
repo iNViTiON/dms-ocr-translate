@@ -101,6 +101,8 @@ compositor, for example in niri:
 binds {
     // like Windows' Win+Shift+S snipping shortcut
     Mod+Shift+S hotkey-overlay-title="OCR and translate a screen region" { spawn "dms" "ipc" "call" "ocrTranslate" "capture"; }
+    // the window alone, to type or paste text
+    Mod+Shift+T hotkey-overlay-title="Open the translator" { spawn "dms" "ipc" "call" "ocrTranslate" "toggle"; }
 }
 ```
 
