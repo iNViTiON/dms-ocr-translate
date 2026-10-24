@@ -54,7 +54,7 @@ It started as a fork of the **OCR Scanner** plugin by Loc Huynh
 
 ## Requirements
 
-- DankMaterialShell (tested with 1.6.3) on Wayland.
+- DankMaterialShell 2.0 or newer (Dux Shell, `requires_dms` in `plugin.json`), on Wayland. For DMS 1.x use the commit `ba34bd3` or older.
 - `tesseract` with the language data you need, `wl-clipboard` (`wl-paste`), `file`, and `procps` (`pkill`).
   For SVG files, `rsvg-convert` (librsvg) or ImageMagick.
 - For translation, an Ollama-compatible server on `http://localhost:11434` (changeable in the settings):

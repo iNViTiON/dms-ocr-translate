@@ -1,6 +1,7 @@
 import QtQuick
 import qs.Common
 import qs.Widgets
+import qs.DCommon.Widgets
 import qs.Services
 
 Column {
@@ -65,7 +66,7 @@ Column {
                 wrapMode: Text.Wrap
             }
 
-            DankButton {
+            DButton {
                 width: Theme.iconSize
                 height: Theme.iconSize
                 iconName: root.isCopied ? "check" : "content_copy"

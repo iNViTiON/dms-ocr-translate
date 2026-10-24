@@ -2,7 +2,7 @@
   "id": "ocrTranslate",
   "name": "OCR Translate",
   "description": "Read text from the screen, the clipboard or an image with Tesseract, and translate it with a local model on an Ollama-compatible server",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
   "author": "MiX (iNViTiON), based on OCR Scanner by Loc Huynh",
   "icon": "document_scanner",
@@ -16,5 +16,6 @@
     "settings_read",
     "settings_write",
     "clipboard_read"
-  ]
+  ],
+  "requires_dms": ">=2.0.0"
 }

@@ -4,6 +4,7 @@ import Quickshell.Io
 import qs.Common
 import qs.Services
 import qs.Widgets
+import qs.DCommon.Widgets
 import qs.Modules.Plugins
 import qs.Modals.FileBrowser
 import "./shared"
@@ -622,7 +623,7 @@ PluginComponent {
                 scale: draggingOver ? 1.2 : 1.0
                 Behavior on scale { NumberAnimation { duration: 200; easing.type: Easing.OutBack } }
 
-                DankIcon {
+                DIcon {
                     name: "document_scanner"
                     size: Theme.iconSizeSmall
                     color: draggingOver ? Theme.primary : (pluginRoot.isScanning ? Theme.primary : Theme.surfaceVariantText)
@@ -759,7 +760,7 @@ PluginComponent {
                 }
             }
 
-            DankFlickable {
+            DFlickable {
                 width: parent.width
                 height: Math.min(contentHeight, pluginRoot.popoutHeight - popout.headerHeight - popout.detailsHeight - Theme.spacingM)
                 contentHeight: contentColumn.implicitHeight
@@ -808,7 +809,7 @@ PluginComponent {
                             }
                         }
 
-                        DankButton {
+                        DButton {
                             id: stopButton
                             text: "Stop"
                             iconName: "stop_circle"
@@ -852,7 +853,7 @@ PluginComponent {
                                         anchors.verticalCenter: parent.verticalCenter
                                         spacing: Theme.spacingS
 
-                                        DankIcon {
+                                        DIcon {
                                             name: pluginRoot.langExpanded ? "expand_less" : "expand_more"
                                             size: Theme.iconSizeSmall
                                             color: Theme.surfaceVariantText
@@ -878,7 +879,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DButton {
                                     id: resetLangs
                                     text: "Reset"
                                     iconName: "restart_alt"
@@ -969,7 +970,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DButton {
                                     anchors.top: parent.top
                                     anchors.right: parent.right
                                     anchors.margins: Theme.spacingS
@@ -993,7 +994,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankButton {
+                                DButton {
                                     text: "Capture"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "screenshot_region"
@@ -1006,7 +1007,7 @@ PluginComponent {
                                     textColor: Theme.primary
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: "Clipboard"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "content_paste"
@@ -1016,7 +1017,7 @@ PluginComponent {
                                     textColor: Theme.surfaceText
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: "Open image"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "image"
@@ -1041,7 +1042,7 @@ PluginComponent {
                                 border.color: pluginRoot.isScanning ? Theme.primary : Theme.outlineVariant
                                 border.width: 1
 
-                                DankFlickable {
+                                DFlickable {
                                     id: resultFlick
                                     anchors.fill: parent
                                     anchors.margins: Theme.spacingM
@@ -1081,7 +1082,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankButton {
+                                DButton {
                                     text: "Re-scan"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "refresh"
@@ -1091,7 +1092,7 @@ PluginComponent {
                                     textColor: Theme.surfaceText
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: I18n.trFor("ocrTranslate", "Copy Text")
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "content_copy"
@@ -1101,7 +1102,7 @@ PluginComponent {
                                     textColor: Theme.primary
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: I18n.trFor("ocrTranslate", "Save Text")
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "save"
@@ -1131,7 +1132,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankDropdown {
+                                DDropdown {
                                     width: (parent.width - swapButton.width - Theme.spacingS * 2) / 2
                                     dropdownWidth: width
                                     compactMode: true
@@ -1144,7 +1145,7 @@ PluginComponent {
                                     onValueChanged: value => pluginRoot.setLanguage("sourceLang", value, value === pluginRoot.autoFromLabel)
                                 }
 
-                                DankButton {
+                                DButton {
                                     id: swapButton
                                     width: 40
                                     height: 40
@@ -1155,7 +1156,7 @@ PluginComponent {
                                     textColor: Theme.surfaceText
                                 }
 
-                                DankDropdown {
+                                DDropdown {
                                     width: (parent.width - swapButton.width - Theme.spacingS * 2) / 2
                                     dropdownWidth: width
                                     compactMode: true
@@ -1177,7 +1178,7 @@ PluginComponent {
                                 border.color: pluginRoot.isTranslating ? Theme.primary : Theme.outlineVariant
                                 border.width: 1
 
-                                DankFlickable {
+                                DFlickable {
                                     id: translationFlick
                                     anchors.fill: parent
                                     anchors.margins: Theme.spacingM
@@ -1228,7 +1229,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DButton {
                                     anchors.top: parent.top
                                     anchors.right: parent.right
                                     anchors.margins: Theme.spacingS
@@ -1245,7 +1246,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankButton {
+                                DButton {
                                     text: "Translate"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "translate"
@@ -1255,7 +1256,7 @@ PluginComponent {
                                     textColor: Theme.primary
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: "Copy"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "content_copy"
@@ -1265,7 +1266,7 @@ PluginComponent {
                                     textColor: Theme.surfaceText
                                 }
 
-                                DankButton {
+                                DButton {
                                     text: "Save"
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     iconName: "save"

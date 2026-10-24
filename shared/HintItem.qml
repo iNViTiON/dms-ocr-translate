@@ -1,6 +1,7 @@
 import QtQuick
 import qs.Common
 import qs.Widgets
+import qs.DCommon.Widgets
 
 Row {
     id: root
@@ -10,7 +11,7 @@ Row {
     property string icon: "lightbulb"
     property string text: ""
 
-    DankIcon {
+    DIcon {
         id: tipIcon
         name: root.icon
         size: 14
